@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>git工具 | 刘福松--程序猿一枚</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="摘要: Git是一款源代码管理工具(版本控制工具)">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git工具">
+<meta property="og:url" content="http://liufusong.github.io/2017/04/08/git使用/index.html">
+<meta property="og:site_name" content="刘福松--程序猿一枚">
+<meta property="og:description" content="摘要: Git是一款源代码管理工具(版本控制工具)">
+<meta property="og:updated_time" content="2017-04-08T14:05:11.768Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git工具">
+<meta name="twitter:description" content="摘要: Git是一款源代码管理工具(版本控制工具)">
+  
+    <link rel="alternate" href="/atom.xml" title="刘福松--程序猿一枚" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">刘福松--程序猿一枚</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">无所求，便无所忧</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://liufusong.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-git使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/08/git使用/" class="article-date">
+  <time datetime="2017-04-07T16:00:00.000Z" itemprop="datePublished">2017-04-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      git工具
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>摘要: Git是一款源代码管理工具(版本控制工具)<br><a id="more"></a><br>正文:</p>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><h3 id="什么是Git"><a href="#什么是Git" class="headerlink" title="什么是Git?"></a>什么是Git?</h3><ul>
+<li>Git是一款源代码管理工具(版本控制工具)<ul>
+<li>我们写的代码需要使用Git进行管理。<br>1.0是稳定<br>2.0加了新功能</li>
+</ul>
+</li>
+<li>源代码有必要管理起吗？</li>
+<li>有必要，因为人工的去处理不同的版本，做相应备份会很麻烦。</li>
+<li>svn,vss,vcs,tfs…..<br>-Git是linux之父当年为了维护linux—linus之前也是手动维护合并把文件发给Linus</li>
+<li>BitKeeper(收费)</li>
+<li>有人想破解(不给提供免费使用)</li>
+<li>linus自己写了一个版本管理的工具（Git）</li>
+</ul>
+<h3 id="分布式版本管理工具，集中式"><a href="#分布式版本管理工具，集中式" class="headerlink" title="分布式版本管理工具，集中式"></a>分布式版本管理工具，集中式</h3><ul>
+<li>git属于分布式</li>
+<li>svn集中式</li>
+</ul>
+<h3 id="git安装"><a href="#git安装" class="headerlink" title="git安装"></a>git安装</h3><h3 id="git初始化一个仓库"><a href="#git初始化一个仓库" class="headerlink" title="git初始化一个仓库"></a>git初始化一个仓库</h3><ul>
+<li>其实就是创建了一个.git隐藏目录</li>
+<li>命令:<code>git init</code>;<ul>
+<li>想在哪个目录创建.git目录，就是哪个目录打开工具然后写命令.</li>
+<li>一般是在项目的根目录执行这个命令.</li>
+</ul>
+</li>
+</ul>
+<h3 id="自报家门"><a href="#自报家门" class="headerlink" title="自报家门"></a>自报家门</h3><ul>
+<li>配置用户名 : <code>git config user.name &quot;testName&quot;</code></li>
+<li>配置邮箱   : <code>git config user.email &quot;test@sina.com&quot;</code></li>
+<li>查看配置信息: <code>git config --list</code></li>
+</ul>
+<h3 id="把代码提交到仓库中"><a href="#把代码提交到仓库中" class="headerlink" title="把代码提交到仓库中"></a>把代码提交到仓库中</h3><ul>
+<li><p>1.先把代码添加到暂存区(就相当于放到仓库门口)</p>
+<ul>
+<li>命令:<code>git add 文件路径</code></li>
+<li>示例:<code>git add ./reademe.md</code></li>
+<li>可以使用<code>git add .</code>这个命令，批量把当前目录下所有修改过的文件添加到暂存区。</li>
+</ul>
+</li>
+<li><p>2.把暂存区的文件提交仓库里</p>
+<ul>
+<li>命令: <code>git commit -m &quot;注释&quot;</code></li>
+<li>示例: <code>git commit -m &quot;我们添加了一个新的功能&quot;</code></li>
+<li>-m 表示指定一个字符串，作为提交的说明(相当于注释);</li>
+</ul>
+</li>
+<li><p>合并add 与commit 命令</p>
+<ul>
+<li><code>git commit -a -m &quot;这是使用合并添加与提交的操作&quot;</code>;</li>
+<li>这里-a参数表明把所有修改后的文件一起添加到暂存区.(只是对修改后的文件有效，对于新添加的文件没有作用)</li>
+</ul>
+</li>
+</ul>
+<h3 id="查看工作区状态"><a href="#查看工作区状态" class="headerlink" title="查看工作区状态"></a>查看工作区状态</h3><ul>
+<li>命令:<code>git status</code></li>
+</ul>
+<h3 id="添加忽略文件"><a href="#添加忽略文件" class="headerlink" title="添加忽略文件"></a>添加忽略文件</h3><ul>
+<li>在项目中有一些文件是不需要提交的,我们需要把它忽略掉</li>
+<li>需要在.git文件夹所在目录新建一个名为.gitignore的文件<br>然后在这个文件中写上需要被忽略的文件的路径。<br>示例: /css/a.css<pre><code>: /css/*.css
+: /a.html
+</code></pre></li>
+</ul>
+<h3 id="比对文件差异"><a href="#比对文件差异" class="headerlink" title="比对文件差异"></a>比对文件差异</h3><ul>
+<li>命令: <code>git diff</code><ul>
+<li>用来比较工作区内容与最近一次提交的内容的区别</li>
+<li>如果暂存区没有文件，就会将工作与代码与最近一次提交对比</li>
+</ul>
+</li>
+<li>命令：<code>git diff --cached</code>  比较暂存区的文件和仓库中文件的区别</li>
+<li>对比之前某两次提交的文件的差异<ul>
+<li>命令:<code>git diff [版本号1] [版本号2] [想比较的文件路径]</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="查看日志"><a href="#查看日志" class="headerlink" title="查看日志"></a>查看日志</h3><ul>
+<li>命令:<code>git log</code>,可以查看每一次提交的日志</li>
+<li>命令:<code>git log --oneline</code> 表示使用简洁的形式输出提交日志</li>
+</ul>
+<h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><ul>
+<li>命令:<code>git reset --hard Head~1</code><ul>
+<li>这是将代码回退到上上一次提交时的状态</li>
+</ul>
+</li>
+<li>命令:<code>git reset --hard Head~2</code><ul>
+<li>回退到上上上次</li>
+</ul>
+</li>
+<li><p>命令:<code>git reset --hard Head~0</code></p>
+<ul>
+<li>回退到上次提交时的状态,~0可以省略</li>
+</ul>
+</li>
+<li><p>命令:<code>git reset --hard 版本号</code></p>
+<ul>
+<li>通过每次提交时生成的版本号来回退版本</li>
+</ul>
+</li>
+<li><p>通过<code>git reflog</code>命令可以查看之前所有版本切换的操作记录，可以通过这个命令得到的版本号回退到指定的版本。</p>
+</li>
+</ul>
+<h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><ul>
+<li>命令:<code>git branch [分支名]</code><ul>
+<li>创建一个新分支</li>
+</ul>
+</li>
+<li>命令:<code>git branch</code><ul>
+<li>查看当前所有的分支</li>
+</ul>
+</li>
+</ul>
+<h3 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h3><ul>
+<li>命令:<code>git checkout [分支名]</code><ul>
+<li>切换分支后可以在切换后的分支中进行正常的操作</li>
+</ul>
+</li>
+</ul>
+<h3 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h3><ul>
+<li>命令:<code>git merge [分支名]</code><ul>
+<li>git会将指定的分支合并到当前分支.</li>
+</ul>
+</li>
+</ul>
+<h3 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h3><ul>
+<li>命令:<code>git branch -d [分支名]</code><ul>
+<li>删除指定分支，-d参数表示要执行删除操作</li>
+</ul>
+</li>
+</ul>
+<h3 id="git提交中的冲突"><a href="#git提交中的冲突" class="headerlink" title="git提交中的冲突"></a>git提交中的冲突</h3><ul>
+<li>如果git不能自动合并分支，就会有冲突，我们需要手动解决冲突，然后再次提交</li>
+</ul>
+<h2 id="github"><a href="#github" class="headerlink" title="github"></a>github</h2><h3 id="github与git"><a href="#github与git" class="headerlink" title="github与git"></a>github与git</h3><ul>
+<li>git 版本管理工具</li>
+<li>github 就是一个网站，只是这个网站提供git服务器的功能</li>
+</ul>
+<h3 id="上传代码到git服务器-push"><a href="#上传代码到git服务器-push" class="headerlink" title="上传代码到git服务器(push)"></a>上传代码到git服务器(push)</h3><ul>
+<li><p>命令:<code>git push [远程服务器地址] [远程服务器的分支]</code></p>
+<ul>
+<li>示例:<code>git push https://github.com/huoqishi/test002.git master</code></li>
+</ul>
+</li>
+<li><p>上传时可以使用一些简化的命令</p>
+<ul>
+<li>将远程服务器地址写成变量的形式<ul>
+<li><code>git remote add [变量名]  [远程服务器地址]</code></li>
+<li>示例:<code>git remote add origin https://github.com/huoqishi/test002.git</code></li>
+<li>这样之后就可以直接使用origin来代替git push 后面写的地址了<br><code>git push origin master</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>还可以尽一步简化<ul>
+<li>在push时加上-u参数，就会默认建立本地当前分支与远程指定分支的关联,下一次push时就不需要输入分支名了<code>git push origin</code>;</li>
+</ul>
+</li>
+</ul>
+<p>### </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://liufusong.github.io/2017/04/08/git使用/" data-id="cj1bhe23l0001787kjbkkqhhg" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/04/08/git上传github/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          github
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/04/08/hello/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">KonvaJS中文文档</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/04/09/正则表达式/">正则表达式</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/08/hello/">KonvaJS中文文档</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/08/git上传github/">github</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/08/git使用/">git工具</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

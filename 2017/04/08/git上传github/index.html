@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>github | 刘福松--程序猿一枚</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="摘要: github">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="github">
+<meta property="og:url" content="http://liufusong.github.io/2017/04/08/git上传github/index.html">
+<meta property="og:site_name" content="刘福松--程序猿一枚">
+<meta property="og:description" content="摘要: github">
+<meta property="og:updated_time" content="2017-04-08T14:09:25.526Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="github">
+<meta name="twitter:description" content="摘要: github">
+  
+    <link rel="alternate" href="/atom.xml" title="刘福松--程序猿一枚" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">刘福松--程序猿一枚</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">无所求，便无所忧</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://liufusong.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-git上传github" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/08/git上传github/" class="article-date">
+  <time datetime="2017-04-07T16:00:00.000Z" itemprop="datePublished">2017-04-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      github
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>摘要: github<br><a id="more"></a></p>
+<h2 id="git使用ssh方式上传代码与github"><a href="#git使用ssh方式上传代码与github" class="headerlink" title="git使用ssh方式上传代码与github"></a>git使用ssh方式上传代码与github</h2><ul>
+<li>git生成公钥和私钥<ul>
+<li>命令:<code>ssh-keygen -t rsa</code>生成的公钥与私钥文件会在当用户目录的.ssh目录下.</li>
+</ul>
+</li>
+</ul>
+<h3 id="把代码push到服务器时需要先pull一下"><a href="#把代码push到服务器时需要先pull一下" class="headerlink" title="把代码push到服务器时需要先pull一下"></a>把代码push到服务器时需要先pull一下</h3><ul>
+<li>在pull之后如果远程的代码与本地的代码有冲突，git会先自动合并冲突，如果不能自动合并，就必需我们手动去处理冲突。</li>
+</ul>
+<h3 id="从服务器上pull代码到本地"><a href="#从服务器上pull代码到本地" class="headerlink" title="从服务器上pull代码到本地"></a>从服务器上pull代码到本地</h3><ul>
+<li>如果本地没有.git目录，需要先初始化一下。</li>
+<li>命令:<code>git pull [远程服务器地址] [远程的分支]</code></li>
+</ul>
+<h3 id="gh-pages分支-搭建博客"><a href="#gh-pages分支-搭建博客" class="headerlink" title="gh-pages分支-搭建博客."></a>gh-pages分支-搭建博客.</h3><ul>
+<li>需要把自已博客的网页代码上传到github上的gh-pages分支</li>
+<li>然后就直接访问了<ul>
+<li>访问的url形式: [github用户名].github.io/[仓库的名字]/[具体的页面]</li>
+</ul>
+</li>
+</ul>
+<h3 id="sourceTree-tortoiseGit"><a href="#sourceTree-tortoiseGit" class="headerlink" title="sourceTree , tortoiseGit"></a>sourceTree , tortoiseGit</h3><h3 id="npm"><a href="#npm" class="headerlink" title="npm"></a>npm</h3><ul>
+<li>官网[<a href="https://www.npmjs.com" target="_blank" rel="external">https://www.npmjs.com</a>]</li>
+<li>node package manager</li>
+<li>命令:<ul>
+<li>初始化:<code>npm init</code></li>
+<li>安装指定包:<code>npm install jquery --save</code></li>
+<li>删除指定包:<code>npm remove jquery --save</code></li>
+<li>下载安装package.json中dependencies属性对的文件:<code>npm install --production</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="browser-sync"><a href="#browser-sync" class="headerlink" title="browser-sync"></a>browser-sync</h3><ul>
+<li>更改代码之后自动刷新浏览器</li>
+<li>需要使用npm进行全局安装:<code>npm install browser-sync -g</code>,-g表示安装到全局</li>
+<li>使用:<code>browser-sync start --server --files &quot;./index.html,app.css,./css/*.css,*.*&quot;</code></li>
+<li>–files参数指定要监视的文件，后面跟要监视的文件的文件路径以逗号分隔。</li>
+</ul>
+<h2 id="gulp"><a href="#gulp" class="headerlink" title="gulp"></a>gulp</h2><p>  <a href="http://www.gulpjs.com" target="_blank" rel="external">官网</a><br>  <a href="http://www.gulpjs.com.cn" target="_blank" rel="external">中文网</a></p>
+<ul>
+<li><p>前端自动化构建工具<br>js压缩,var x,xname，混淆<br>合并.<br>css压缩<br>html压压缩</p>
+</li>
+<li><p>grunt ,webpack…</p>
+</li>
+</ul>
+<h3 id="核心就5个方法"><a href="#核心就5个方法" class="headerlink" title="核心就5个方法"></a>核心就5个方法</h3><ul>
+<li>task,gulp中是一个个任务的形式来实现功能。<ul>
+<li>task(‘任务名’,function(){<br>…..<br>});</li>
+</ul>
+</li>
+<li>src<ul>
+<li>src(‘./*.js’)</li>
+</ul>
+</li>
+<li>dest(‘./minjs/‘)// 指定处理后的文件的输出路径.</li>
+<li>watch(‘./*.js’,[‘任务名1’,’任务名2’]);</li>
+<li>run(‘任务名’);//执行指定的任务.</li>
+</ul>
+<h3 id="gulp的安装"><a href="#gulp的安装" class="headerlink" title="gulp的安装"></a>gulp的安装</h3><ul>
+<li>使用npm 进行安装</li>
+<li><code>npm install gulp-cli -g</code>;</li>
+</ul>
+<h3 id="gulp-使用"><a href="#gulp-使用" class="headerlink" title="gulp 使用"></a>gulp 使用</h3><h4 id="使用时还需要在项目中通过npm非全局安装gulp"><a href="#使用时还需要在项目中通过npm非全局安装gulp" class="headerlink" title="使用时还需要在项目中通过npm非全局安装gulp"></a>使用时还需要在项目中通过npm非全局安装gulp</h4><ul>
+<li><code>npm install gulp --save-dev</code></li>
+</ul>
+<h4 id="还需要在当前项目根目录添加一个gulpfile-js文件来写具体的任务代码"><a href="#还需要在当前项目根目录添加一个gulpfile-js文件来写具体的任务代码" class="headerlink" title="还需要在当前项目根目录添加一个gulpfile.js文件来写具体的任务代码."></a>还需要在当前项目根目录添加一个gulpfile.js文件来写具体的任务代码.</h4><h3 id="gulp的一些插件"><a href="#gulp的一些插件" class="headerlink" title="gulp的一些插件"></a>gulp的一些插件</h3><ul>
+<li>也是使用npm安装</li>
+<li>对js代码进行压缩 gulp-uglify</li>
+<li>对代码进行合并 gulp-concat</li>
+<li>对css进行压缩 gulp-cssnano</li>
+<li>对html进行压缩 gulp-htmlmin</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://liufusong.github.io/2017/04/08/git上传github/" data-id="cj1bhe23l0000787kvbwxgbyh" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/04/08/git使用/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">git工具</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/04/">April 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/04/09/正则表达式/">正则表达式</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/08/hello/">KonvaJS中文文档</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/08/git上传github/">github</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/08/git使用/">git工具</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
