@@ -15,12 +15,10 @@
 <meta property="og:url" content="http://liufusong.github.io/2017/04/09/正则表达式/index.html">
 <meta property="og:site_name" content="刘福松--程序猿一枚">
 <meta property="og:description" content="摘要: 正则表达式的基本使用">
-<meta property="og:image" content="http://liufusong.github.io/2017/04/09/正则表达式/banner.jpg">
-<meta property="og:updated_time" content="2017-04-09T12:43:28.261Z">
+<meta property="og:updated_time" content="2017-04-11T15:02:59.823Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式">
 <meta name="twitter:description" content="摘要: 正则表达式的基本使用">
-<meta name="twitter:image" content="http://liufusong.github.io/2017/04/09/正则表达式/banner.jpg">
   
     <link rel="alternative" href="/atom.xml" title="刘福松--程序猿一枚" type="application/atom+xml">
   
@@ -89,9 +87,9 @@
 		        
 					<a class="weibo" target="_blank" href="http://weibo.com/5460135199/profile" title="weibo"><i class="icon-weibo"></i></a>
 		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+					<a class="rss" target="_blank" href="view-source:https://liufusong.github.io/" title="rss"><i class="icon-rss"></i></a>
 		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+					<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/liu-fu-song-25/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 		        
 			</div>
 		</nav>
@@ -132,9 +130,9 @@
 			        
 						<a class="weibo" target="_blank" href="http://weibo.com/5460135199/profile" title="weibo"><i class="icon-weibo"></i></a>
 			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
+						<a class="rss" target="_blank" href="view-source:https://liufusong.github.io/" title="rss"><i class="icon-rss"></i></a>
 			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
+						<a class="zhihu" target="_blank" href="https://www.zhihu.com/people/liu-fu-song-25/activities" title="zhihu"><i class="icon-zhihu"></i></a>
 			        
 				</div>
 			</nav>
@@ -181,8 +179,27 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>摘要: 正则表达式的基本使用<br><a id="more"></a></p>
-<h2 id="正则表达式创建"><a href="#正则表达式创建" class="headerlink" title="正则表达式创建"></a>正则表达式创建</h2><ul>
-<li><img src="./banner.jpg"></li>
+<h2 id="本文目标"><a href="#本文目标" class="headerlink" title="本文目标"></a>本文目标</h2><ul>
+<li>让你明白正则表达式是什么，并对它有一些基本的了解，让你可以在自己的程序或网页里使用它。<h2 id="如何使用本教程"><a href="#如何使用本教程" class="headerlink" title="如何使用本教程"></a>如何使用本教程</h2></li>
+<li>别被下面那些复杂的表达式吓倒，只要跟着我一步一步来，你会发现正则表达式其实并没有想像中的那么困难。当然，如果你看完了这篇教程之后，发现自己明白了很多，却又几乎什么都记不得，那也是很正常的——我认为，没接触过正则表达式的人在看完这篇教程后，能把提到过的语法记住80%以上的可能性为零。这里只是让你明白基本的原理，以后你还需要多练习，多使用，才能熟练掌握正则表达式。<br>除了作为入门教程之外，本文还试图成为可以在日常工作中使用的正则表达式语法参考手册。就作者本人的经历来说，这个目标还是完成得不错的——你看，我自己也没能把所有的东西记下来，不是吗？<h2 id="正则表达式到底是什么东西？"><a href="#正则表达式到底是什么东西？" class="headerlink" title="正则表达式到底是什么东西？"></a>正则表达式到底是什么东西？</h2></li>
+<li>在编写处理字符串的程序或网页时，经常会有查找符合某些复杂规则的字符串的需要。正则表达式就是用于描述这些规则的工具。换句话说，正则表达式就是记录文本规则的代码。<br>很可能你使用过Windows/Dos下用于文件查找的通配符(wildcard)，也就是<em>和?。如果你想查找某个目录下的所有的Word文档的话，你会搜索</em>.doc。在这里，*会被解释成任意的字符串。和通配符类似，正则表达式也是用来进行文本匹配的工具，只不过比起通配符，它能更精确地描述你的需求——当然，代价就是更复杂——比如你可以编写一个正则表达式，用来查找所有以0开头，后面跟着2-3个数字，然后是一个连字号“-”，最后是7或8位数字的字符串(像010-12345678或0376-7654321)。<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2></li>
+<li>学习正则表达式的最好方法是从例子开始，理解例子之后再自己对例子进行修改，实验。下面给出了不少简单的例子，并对它们作了详细的说明。<br>  假设你在一篇英文小说里查找hi，你可以使用正则表达式hi。<br>  这几乎是最简单的正则表达式了，它可以精确匹配这样的字符串：由两个字符组成，前一个字符是h,后一个是i。通常，处理正则表达式的工具会提供一个忽略大小写的选项，如果选中了这个选项，它可以匹配hi,HI,Hi,hI这四种情况中的任意一种。<br>  不幸的是，很多单词里包含hi这两个连续的字符，比如him,history,high等等。用hi来查找的话，这里边的hi也会被找出来。如果要精确地查找hi这个单词的话，我们应该使用<code>\bhi\b</code>。<br>  \b是正则表达式规定的一个特殊代码（好吧，某些人叫它元字符，metacharacter），代表着单词的开头或结尾，也就是单词的分界处。虽然通常英文的单词是由空格，标点符号或者换行来分隔的，但是\b并不匹配这些单词分隔字符中的任何一个，它只匹配一个位置。<br>  假如你要找的是hi后面不远处跟着一个Lucy，你应该用<code>\bhi\b.*\bLucy\b</code>。<br>  这里，.是另一个元字符，匹配除了换行符以外的任意字符。<em>同样是元字符，不过它代表的不是字符，也不是位置，而是数量——它指定</em>前边的内容可以连续重复使用任意次以使整个表达式得到匹配。因此，.<em>连在一起就意味着任意数量的不包含换行的字符。现在\bhi\b.</em>\bLucy\b的意思就很明显了：先是一个单词hi,然后是任意个任意字符(但不能是换行)，最后是Lucy这个单词。<br>  0\d\d-\d\d\d\d\d\d\d\d匹配这样的字符串：以0开头，然后是两个数字，然后是一个连字号“-”，最后是8个数字(也就是中国的电话号码。当然，这个例子只能匹配区号为3位的情形)。<br>  这里的\d是个新的元字符，匹配一位数字(0，或1，或2，或……)。-不是元字符，只匹配它本身——连字符(或者减号，或者中横线，或者随你怎么称呼它)。<br>  为了避免那么多烦人的重复，我们也可以这样写这个表达式：<code>0\d{2}-\d{8}</code>。这里\d后面的{2}({8})的意思是前面\d必须连续重复匹配2次(8次)。</li>
+</ul>
+<h2 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h2><ul>
+<li>现在你已经知道几个很有用的元字符了，如\b,.,*，还有\d.正则表达式里还有更多的元字符，比如\s匹配任意的空白符，包括空格，制表符(Tab)，换行符，中文全角空格等。\w匹配字母或数字或下划线或汉字等。</li>
+<li>下面来看看更多的例子：<br>\ba\w<em>\b匹配以字母a开头的单词——先是某个单词开始处(\b)，然后是字母a,然后是任意数量的字母或数字(\w</em>)，最后是单词结束处(\b)。</li>
+<li>\d+匹配1个或更多连续的数字。这里的+是和<em>类似的元字符，不同的是</em>匹配重复任意次(可能是0次)，而+则匹配重复1次或更多次。<br>\b\w{6}\b 匹配刚好6个字符的单词。<br>表1.常用的元字符<br>代码    说明<table style=" background:#999; margin-top:-600px; color:#000;" class="table table-striped table-condensed"><br><tr><br><td><code>.</code>   匹配除换行符以外的任意字符</td><br></tr><br><tr><br><td><code>\w</code>    匹配字母或数字或下划线或汉字</td><br></tr><br><tr><br><td><code>\s</code>    匹配任意的空白符</td><br></tr><br><tr><br><td><code>\d</code>    匹配数字</td><br></tr><br><tr><br><td><code>\b</code>    匹配单词的开始或结束</td><br></tr><br><tr><br><td><code>^</code>    匹配字符串的开始</td><br></tr><br><tr><br><td><code>$</code>    匹配字符串的结束</td><br></tr><br></table></li>
+<li>元字符^（和数字6在同一个键位上的符号）和$都匹配一个位置，这和\b有点类似。^匹配你要用来查找的字符串的开头，$匹配结尾。这两个代码在验证输入的内容时非常有用，比如一个网站如果要求你填写的QQ号必须为5位到12位数字时，可以使用：^\d{5,12}$。<br>这里的{5,12}和前面介绍过的{2}是类似的，只不过{2}匹配只能不多不少重复2次，{5,12}则是重复的次数不能少于5次，不能多于12次，否则都不匹配。<br>因为使用了^和$，所以输入的整个字符串都要用来和\d{5,12}来匹配，也就是说整个输入必须是5到12个数字，因此如果输入的QQ号能匹配这个正则表达式的话，那就符合要求了。<br>和忽略大小写的选项类似，有些正则表达式处理工具还有一个处理多行的选项。如果选中了这个选项，^和$的意义就变成了匹配行的开始处和结束处。</li>
+</ul>
+<h2 id="字符转义"><a href="#字符转义" class="headerlink" title="字符转义"></a>字符转义</h2><ul>
+<li>如果你想查找元字符本身的话，比如你查找.,或者<em>,就出现了问题：你没办法指定它们，因为它们会被解释成别的意思。这时你就得使用\来取消这些字符的特殊意义。因此，你应该使用.和\</em>。当然，要查找\本身，你也得用\.<br>例如：<code>deerchao\.net</code>匹配<code>deerchao.net</code>，<code>C:\\Windows</code>匹配<code>C:\Windows</code>。<h2 id="重复"><a href="#重复" class="headerlink" title="重复"></a>重复</h2></li>
+<li>你已经看过了前面的<em>,+,{2},{5,12}这几个匹配重复的方式了。下面是正则表达式中所有的限定符(指定数量的代码，例如</em>,{5,12}等)：<br>表2.常用的限定符<br>代码/语法    说明<ul>
+<li>重复零次或更多次</li>
+</ul>
+<ul>
+<li>重复一次或更多次<br>?    重复零次或一次<br>{n}    重复n次<br>{n,}    重复n次或更多次<br>{n,m}    重复n到m次<br>下面是一些使用重复的例子：<br>Windows\d+匹配Windows后面跟1个或更多数字<br>^\w+匹配一行的第一个单词(或整个字符串的第一个单词，具体匹配哪个意思得看选项设置)</li>
+</ul>
+</li>
 </ul>
 
       
@@ -202,7 +219,7 @@
                     
                     
                     <div class="reward-box-item">
-                      <img class="reward-img" src="https://liufusong.github.io/img/tx.jpg">
+                      <img class="reward-img" src="https://liufusong.github.io/img/IMG_2558(20170411-214651).jpg">
                       <span class="reward-type">微信</span>
                     </div>
                     
@@ -282,7 +299,7 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/04/08/hello/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/04/08/KonvaJS中文文档/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
