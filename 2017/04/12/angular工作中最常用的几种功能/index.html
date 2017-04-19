@@ -9,13 +9,13 @@
   <title>angular工作中最常用的几种功能 | 刘福松--程序猿一枚</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="摘要： AngularJS 最常用的功能">
-<meta name="keywords">
+<meta name="keywords" content="angular">
 <meta property="og:type" content="article">
 <meta property="og:title" content="angular工作中最常用的几种功能">
 <meta property="og:url" content="http://liufusong.github.io/2017/04/12/angular工作中最常用的几种功能/index.html">
 <meta property="og:site_name" content="刘福松--程序猿一枚">
 <meta property="og:description" content="摘要： AngularJS 最常用的功能">
-<meta property="og:updated_time" content="2017-04-14T01:50:24.575Z">
+<meta property="og:updated_time" content="2017-04-19T05:22:29.659Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="angular工作中最常用的几种功能">
 <meta name="twitter:description" content="摘要： AngularJS 最常用的功能">
@@ -177,18 +177,70 @@
 
       
         <p>摘要： AngularJS 最常用的功能<br><a id="more"></a></p>
-<h3 id="第一动态绑定之ng-model"><a href="#第一动态绑定之ng-model" class="headerlink" title="第一动态绑定之ng-model"></a>第一动态绑定之ng-model</h3><ul>
-<li>任何有用户输入，只要是有值的html标签，都可以动态绑定</li>
-<li>举个栗子</li>
-<li><code>&lt;input type=&quot;text&quot; ng-model=&#39;password&#39;&gt;</code>。</li>
-<li>将<code>input</code>的值与 <code>password</code> 进行绑定,下面你就可以通{ { } }过拿到input的值。</li>
-<li><code>&lt;span&gt;{ { password } }&lt;/span&gt;</code><h3 id="第二迭代输出之ng-repeat标签"><a href="#第二迭代输出之ng-repeat标签" class="headerlink" title="第二迭代输出之ng-repeat标签"></a>第二迭代输出之ng-repeat标签</h3></li>
+<h3 id="第一-迭代输出之ng-repeat标签"><a href="#第一-迭代输出之ng-repeat标签" class="headerlink" title="第一 迭代输出之ng-repeat标签"></a>第一 迭代输出之ng-repeat标签</h3><ul>
 <li><p>ng-repeat让table ul ol等标签和js里的数组完美结合</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">ul</span></span></div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;ul&gt;</div><div class="line">    &lt;li ng-repeat=&quot;person in persons&quot;&gt;</div><div class="line">    &#123; &#123; person.name &#125; &#125; is &#123; &#123;person.age&#125; &#125; years old.</div><div class="line">    &lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure>
 </li>
 <li><p>你甚至可以指定输出的顺序：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;li ng-repeat=&quot;person in persons | orderBy:&apos;name&apos;&quot;&gt;</div></pre></td></tr></table></figure>
 </li>
-<li></li><li ng-repeat="person in persons | orderBy:'name'">
+</ul>
+<h3 id="第二-动态绑定之ng-model标签"><a href="#第二-动态绑定之ng-model标签" class="headerlink" title="第二 动态绑定之ng-model标签"></a>第二 动态绑定之ng-model标签</h3><ul>
+<li><p>任何有用户输入，只要是有值的html标签，都可以动态绑定js中的变量，<br>而且是动态绑定。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;text&quot; ng-model=&apos;password&apos;&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>对于绑定的变量，你可以使用{ { } } 直接引用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;span&gt;you input password is &#123;&#123;password&#125;&#125;&lt;/span&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>如果你熟悉fiter，你可以很容易的按你的需要格式输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;span&gt;&#123; &#123; 1288323623006 | date:&apos;yyyy-MM-dd HH:mm:ss Z&apos; &#125; &#125; &lt;/span&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="第三-绑定点击事件之ng-click事件"><a href="#第三-绑定点击事件之ng-click事件" class="headerlink" title="第三 绑定点击事件之ng-click事件"></a>第三 绑定点击事件之ng-click事件</h3><ul>
+<li><p>使用ng-click你可以很容易的为一个标签绑定点击事件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;button ng-click=&quot;pressMe()&quot;/&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>当然前提是你要在$scope域中定义的自己的pressMe方法。</p>
+</li>
+<li><p>和传统的onclick方法不同，你甚至可以为ng-click方法传递一个对象，就像这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;ul&gt;</div><div class="line">    &lt;li ng-repeat=&quot;person in persons&quot;&gt;</div><div class="line">        &lt;button ng-click=&quot;printf(person)&quot;/&gt;</div><div class="line">    &lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>当然还有ng-dblclick标签</p>
+</li>
+</ul>
+<h3 id="第四-分支语句之ng-switch-on、ng-if-ng-show-ng-hide-ng-disabled标签"><a href="#第四-分支语句之ng-switch-on、ng-if-ng-show-ng-hide-ng-disabled标签" class="headerlink" title="第四 分支语句之ng-switch on、ng-if/ng-show/ng-hide/ng-disabled标签"></a>第四 分支语句之ng-switch on、ng-if/ng-show/ng-hide/ng-disabled标签</h3><ul>
+<li>分支语句让你在界面上都可以写逻辑判断。<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">&lt;ul&gt;</div><div class="line">    &lt;li ng-repeat=&quot;person in persons&quot;&gt;</div><div class="line">        &lt;span ng-switch on=&quot;person.sex&quot;&gt;</div><div class="line">            &lt;span ng-switch-when=&quot;1&quot;&gt;you are a boy&lt;/span&gt;</div><div class="line">            &lt;span ng-switch-when=&quot;2&quot;&gt;you are a girl&lt;/span&gt;</div><div class="line">        &lt;/span&gt;</div><div class="line">        &lt;span ng-if=&quot;person.sex==1&quot;&gt;you may be a father&lt;/span&gt;</div><div class="line">        &lt;span ng-show=&quot;person.sex==2&quot;&gt;you may be a mother&lt;/span&gt;</div><div class="line">        &lt;span&gt;</div><div class="line">        please input your baby&apos;s name:&lt;input type=&quot;text&quot; ng-disabled=&quot;!person.hasBaby&quot;/&gt;</div><div class="line">        &lt;/span&gt;</div><div class="line">    &lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="第五-校验语法之ng-trim-ng-minlength-ng-maxlength-required-ng-pattern-等标签"><a href="#第五-校验语法之ng-trim-ng-minlength-ng-maxlength-required-ng-pattern-等标签" class="headerlink" title="第五 校验语法之ng-trim ng-minlength ng-maxlength required ng-pattern 等标签"></a>第五 校验语法之ng-trim ng-minlength ng-maxlength required ng-pattern 等标签</h3><ul>
+<li>表单中的输入框，你可以使用上面的标签来实现对用户输入的校验。</li>
+<li><p>从字面意思上你已经知道了它们的意思。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;form name=&quot;yourForm&quot;&gt;</div><div class="line">    &lt;input type=&quot;text&quot; name=&quot;inputText&quot; required ng-trim=&quot;true&quot; ng-model=&quot;userNum&quot; ng-pattern=&quot;/^[0-9]*[1-9][0-9]*$/&quot; ng-maxlength=&quot;6&quot; maxlength=&quot;6&quot;/&gt;</div><div class="line">&lt;/form&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>你可以通过 $scope.yourForm.inputText.$error.required 来判断输入框是否为空</p>
+</li>
+<li>你可以通过 $scope.yourForm.inputText.$invalid 来判断输入的内容是否满足ng-pattern，ng-maxlength，maxlength</li>
+<li>你通过$scope.userNum获得的输入内容是去掉前后空白的，因为ng-trim的存在。<h3 id="第六-下拉框之ng-options标签"><a href="#第六-下拉框之ng-options标签" class="headerlink" title="第六 下拉框之ng-options标签"></a>第六 下拉框之ng-options标签</h3></li>
+<li><p>ng-options是为下拉框专门打造的标签。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;select ng-model=&quot;yourSelected&quot; ng-options=&quot;person.id as person.name in persons&quot;&gt;&lt;/select&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>下拉框中显示的是person.name，当你选中其中一个的时候，你可以通过yourSelected得到你选中的person.id.</p>
+</li>
+</ul>
+<h3 id="第七-控制css之ng-style标签"><a href="#第七-控制css之ng-style标签" class="headerlink" title="第七  控制css之ng-style标签"></a>第七  控制css之ng-style标签</h3><ul>
+<li><p>ng-style帮你轻松控制你的css属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;span ng-style=&quot;myColor&quot;&gt;your color&lt;/span&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>你可以通过给myColor赋值的形式来改变你想要的效果，就像这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$scope.myColor= &#123; color:&apos;blue&apos; &#125; ;</div><div class="line">$scope.myColor=&#123;cursor: &apos;pointer&apos;,color:&apos;blue&apos;&#125;;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="第八-异步请求之-http对象。"><a href="#第八-异步请求之-http对象。" class="headerlink" title="第八  异步请求之$http对象。"></a>第八  异步请求之$http对象。</h3><ul>
+<li>AngularJS 提供了一个类似jquery的$.ajax的对象，用于异步请求。</li>
+<li><p>在AngularJS中对异步操作是推崇至极的，所以$http的操作都是异步的不像jquery.ajax里还提供了async参数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$http(&#123;method : &apos;POST&apos;,params : &#123; id:123&#125;, data:&#123;name:&apos;john&apos;,age:27&#125;, url : &quot;/mypath&quot;&#125;)</div><div class="line">.success(function(response, status, headers, config)&#123;</div><div class="line">//do anything what you want;</div><div class="line">&#125;)</div><div class="line">.error(function(response, status, headers, config)&#123;</div><div class="line">//do  anything what you want;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+</li>
+<li><p>如果你是POST请求，params里的数据会帮你拼到url后面，data里的数据会放到请求体中。</p>
 </li>
 </ul>
 
@@ -225,6 +277,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">angular</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -454,6 +517,46 @@ MathJax.Hub.Queue(function() {
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">githug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">KonvaJs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">倒计时</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">angular</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">链接</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">前端</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
