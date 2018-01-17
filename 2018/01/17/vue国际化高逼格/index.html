@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://liufusong.github.io">
-  <title>正则表达式 | destiny</title>
+  <title>vue国际化高逼格 | destiny</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="摘要: vue多语言的设置">
 <meta name="keywords" content="vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="正则表达式">
+<meta property="og:title" content="vue国际化高逼格">
 <meta property="og:url" content="http://liufusong.github.io/2018/01/17/vue国际化高逼格/index.html">
 <meta property="og:site_name" content="destiny">
 <meta property="og:description" content="摘要: vue多语言的设置">
-<meta property="og:updated_time" content="2018-01-17T10:06:07.691Z">
+<meta property="og:updated_time" content="2018-01-17T10:11:02.145Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="正则表达式">
+<meta name="twitter:title" content="vue国际化高逼格">
 <meta name="twitter:description" content="摘要: vue多语言的设置">
   
     <link rel="alternative" href="/atom.xml" title="destiny" type="application/atom+xml">
@@ -161,7 +161,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      正则表达式
+      vue国际化高逼格
     </h1>
   
 
@@ -179,8 +179,8 @@
       
         <p>摘要: vue多语言的设置<br><a id="more"></a></p>
 <h2 id="1-NPM-项目安装"><a href="#1-NPM-项目安装" class="headerlink" title="1.NPM 项目安装"></a>1.NPM 项目安装</h2> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cnpm i vue-i18n</div></pre></td></tr></table></figure>
-<h2 id="2-使用方法"><a href="#2-使用方法" class="headerlink" title="2.使用方法"></a>2.使用方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">/* 国际化使用规则 */</div><div class="line">import Vue from &apos;vue&apos;</div><div class="line">import VueI18n from &apos;vue-i18n&apos;</div><div class="line"></div><div class="line">Vue.use(VueI18n)</div><div class="line"></div><div class="line">const messages = &#123;</div><div class="line">  en: &#123;</div><div class="line">    message: &#123;</div><div class="line">      hello: &apos;world hello&apos;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  zh: &#123;</div><div class="line">    message: &#123;</div><div class="line">      hello: &apos;世界&apos;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">const i18n = new VueI18n(&#123;</div><div class="line">  locale: &apos;zh&apos;,</div><div class="line">  messages</div><div class="line">&#125;)</div><div class="line"></div><div class="line">export default &#123;</div><div class="line">  data () &#123;</div><div class="line">    return &#123;</div><div class="line">      hello: this.$t(&apos;message.hello&apos;)</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  i18n</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="数据使用"><a href="#数据使用" class="headerlink" title="数据使用"></a>数据使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;#app&quot;&gt;</div><div class="line">  &lt;p&gt;&#123;&#123; $t(&quot;message.hello&quot;) &#125;&#125;&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+<h2 id="2-使用方法"><a href="#2-使用方法" class="headerlink" title="2.使用方法"></a>2.使用方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">/* 国际化使用规则 */</div><div class="line">import Vue from &apos;vue&apos;</div><div class="line">import VueI18n from &apos;vue-i18n&apos;</div><div class="line"></div><div class="line">Vue.use(VueI18n)</div><div class="line">&lt;!-- 需要国际化的数据定义在此处 --&gt;</div><div class="line">const messages = &#123;</div><div class="line">  en: &#123;</div><div class="line">    message: &#123;</div><div class="line">      hello: &apos;world hello&apos;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  zh: &#123;</div><div class="line">    message: &#123;</div><div class="line">      hello: &apos;世界&apos;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">&lt;!-- 使用i18n --&gt;</div><div class="line">const i18n = new VueI18n(&#123;</div><div class="line">  locale: &apos;zh&apos;,</div><div class="line">  messages</div><div class="line">&#125;)</div><div class="line"></div><div class="line">export default &#123;</div><div class="line">  data () &#123;</div><div class="line">    return &#123;</div><div class="line">      hello: this.$t(&apos;message.hello&apos;)</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  i18n</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="3-页面数据使用"><a href="#3-页面数据使用" class="headerlink" title="3.页面数据使用"></a>3.页面数据使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;#app&quot;&gt;</div><div class="line">  &lt;p&gt;&#123;&#123; $t(&quot;message.hello&quot;) &#125;&#125;&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
 
       
 
@@ -312,7 +312,7 @@
 
 <section id="comments">
   <!--高速版，加载速度快，使用前需测试页面的兼容性-->
-  <!--<div id="SOHUCS" sid="正则表达式"  style="padding: 0px 30px 0px 46px;"></div>-->
+  <!--<div id="SOHUCS" sid="vue国际化高逼格"  style="padding: 0px 30px 0px 46px;"></div>-->
   <!--<script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>-->
   <!--<script type="text/javascript">-->
     <!--window.changyan.api.config({-->
@@ -465,6 +465,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">KonvaJs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">angular</a>
               </li>
              
@@ -474,18 +478,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">githug</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">KonvaJs</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -501,7 +493,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">node</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">github</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -517,11 +513,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">-vue</a>
+                <a href="javascript:void(0)" class="js-tag color5">node</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">-vue</a>
               </li>
              
               <li class="article-tag-list-item">
