@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://liufusong.github.io">
-  <title>Tag: git | destiny</title>
+  <title>正则表达式 | destiny</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="destiny">
-<meta property="og:url" content="http://liufusong.github.io/tags/git/index.html">
+  <meta name="description" content="摘要: vue多语言的设置">
+<meta name="keywords" content="vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="正则表达式">
+<meta property="og:url" content="http://liufusong.github.io/2018/01/17/vue国际化高逼格/index.html">
 <meta property="og:site_name" content="destiny">
+<meta property="og:description" content="摘要: vue多语言的设置">
+<meta property="og:updated_time" content="2018-01-17T10:06:07.691Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="destiny">
+<meta name="twitter:title" content="正则表达式">
+<meta name="twitter:description" content="摘要: vue多语言的设置">
   
     <link rel="alternative" href="/atom.xml" title="destiny" type="application/atom+xml">
   
@@ -148,107 +153,189 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-vue国际化高逼格" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
 
-  
-  
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/08/git使用/" class="archive-article-date">
-  	<time datetime="2017-04-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-08</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/08/git使用/">git工具</a>
+    <h1 class="article-title" itemprop="name">
+      正则表达式
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/01/17/vue国际化高逼格/" class="archive-article-date">
+  	<time datetime="2018-01-17T09:22:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-17</time>
+</a>
+        
+      </header>
+
+    
+
+    <div class="article-entry" itemprop="articleBody">
+
+      
+        <p>摘要: vue多语言的设置<br><a id="more"></a></p>
+<h2 id="1-NPM-项目安装"><a href="#1-NPM-项目安装" class="headerlink" title="1.NPM 项目安装"></a>1.NPM 项目安装</h2> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cnpm i vue-i18n</div></pre></td></tr></table></figure>
+<h2 id="2-使用方法"><a href="#2-使用方法" class="headerlink" title="2.使用方法"></a>2.使用方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">/* 国际化使用规则 */</div><div class="line">import Vue from &apos;vue&apos;</div><div class="line">import VueI18n from &apos;vue-i18n&apos;</div><div class="line"></div><div class="line">Vue.use(VueI18n)</div><div class="line"></div><div class="line">const messages = &#123;</div><div class="line">  en: &#123;</div><div class="line">    message: &#123;</div><div class="line">      hello: &apos;world hello&apos;</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  zh: &#123;</div><div class="line">    message: &#123;</div><div class="line">      hello: &apos;世界&apos;</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">const i18n = new VueI18n(&#123;</div><div class="line">  locale: &apos;zh&apos;,</div><div class="line">  messages</div><div class="line">&#125;)</div><div class="line"></div><div class="line">export default &#123;</div><div class="line">  data () &#123;</div><div class="line">    return &#123;</div><div class="line">      hello: this.$t(&apos;message.hello&apos;)</div><div class="line">    &#125;</div><div class="line">  &#125;,</div><div class="line">  i18n</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="数据使用"><a href="#数据使用" class="headerlink" title="数据使用"></a>数据使用</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;#app&quot;&gt;</div><div class="line">  &lt;p&gt;&#123;&#123; $t(&quot;message.hello&quot;) &#125;&#125;&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="https://liufusong.github.io/img/IMG_2558(20170411-214651).jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">githug</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://liufusong.github.io/2018/01/17/vue国际化高逼格/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/04/08/git上传github/" class="archive-article-date">
-  	<time datetime="2017-04-07T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/04/08/git上传github/">github</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">githug</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+<span style="float:right; position: absolute; font-size: 14px; top:5px; right:7.6923%; color: #999" id="busuanzi_container_page_pv">
+     浏览<span id="busuanzi_value_page_pv"></span>次
+    </span>
+  
+<nav id="article-nav">
+  
+    <a href="/2018/01/13/托管静态网站surge/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          托管静态网站surge
+        
+      </div>
+    </a>
   
   
-    </div></section>
-  
+</nav>
 
-    
+
+
+
+
+
+<section id="comments">
+  <!--高速版，加载速度快，使用前需测试页面的兼容性-->
+  <!--<div id="SOHUCS" sid="正则表达式"  style="padding: 0px 30px 0px 46px;"></div>-->
+  <!--<script charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/changyan.js" ></script>-->
+  <!--<script type="text/javascript">-->
+    <!--window.changyan.api.config({-->
+      <!--appid: 'cysXd3DjE',-->
+      <!--conf: '321c9d147cdc7f9335fd25bfa8532e5a'-->
+    <!--});-->
+  <!--</script>-->
+  <div style="padding: 0 30px;" id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+  <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+  <script>
+    var cloudTieConfig = {
+      url: document.location.href,
+      sourceId: "",
+      productKey: "0866c57246a04bb297d1c0fe76fffe40",
+      target: "cloud-tie-wrapper"
+    };
+    var yunManualLoad = true;
+    Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
+  </script>
+  <div style="padding: 0px 30px 0px 46px;" id="uyan_frame"></div>
+  <script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js"></script>
+</section>
+
 
 
 
@@ -282,9 +369,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		root: "/",
